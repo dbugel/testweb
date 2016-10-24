@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Polar Bears on Melting Ice</title>
+    <meta name="author" content="Pernille Bugel" />
+    <meta name="description" content="Polar Bears and Climate Change" />
+    <meta name="keywords"  content="polar bears, ice, climate change, tourism" />
+    <meta name="Resource-type" content="Document" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="vendors/css/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="vendors/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
+
+    <style>
+        /* Style for our header texts
+        * --------------------------------------- */
+        h1{
+            font-size: 5em;
+            color: #fff;
+            margin:0;
+            padding:0;
+        }
+
+        /* Centered texts in each section
+        * --------------------------------------- */
+        .section{
+            text-align:center;
+            overflow: hidden;
+        }
+
+        #myVideo{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top:0;
+            right:0;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            background-color: black; /* in case the video doesn't fit the whole page*/
+            background-image: /* our video */;
+            background-position: center center;
+            background-size: contain;
+            object-fit: cover; /*cover video background */
+            z-index:3;
+        }
+
+
+
+        /* Layer with position absolute in order to have it over the video
+        * --------------------------------------- */
+        #section0 .layer{
+            position: absolute;
+            z-index: 4;
+            width: 100%;
+            left: 0;
+            top: 48px;
+        }
+
+        /*solves problem with overflowing video in Mac with Chrome */
+        #section0{
+        }
+
+        #section1 {
+
+            background-image: url(imgs/photo_one.JPG);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section2 {
+
+            background-image: url(imgs/photo_two.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section3 {
+
+            background-image: url(imgs/photo_three.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section4 {
+
+            background-image: url(imgs/photo_four.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section5 {
+
+            background-image: url(imgs/photo_five.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section6 {
+
+            background-image: url(imgs/photo_six.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section7 {
+            background: black;
+        }
+
+        .title-container {
+            position: absolute;
+            width: 100%;
+            height: 360px;
+            display: block;
+            /*background-color: white;*/
+            margin: 0 auto;
+            opacity: 0.5;
+            top: 33%;
+            /* left: 25%; */
+            text-align: center;
+        }
+
+        .sidebar-container {
+            position: absolute;
+            width: 300px;
+            min-height: 100%;
+            display: block;
+            background-color: white;
+            opacity: 0.5;
+            top: 0;
+            left: 60px;
+            /* left: 25%; */
+            text-align: center;
+            padding: 16px;
+        }
+
+        .vignette {
+            position: relative;
+            display: block;
+        }
+        .vignette img {
+            display: block;
+        }
+        .vignette:after {
+            -moz-box-shadow: inset 0 0 10em #666;
+            -webkit-box-shadow: inset 0 0 10em #666;
+            box-shadow: inset 0 0 10em #666;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            content: "";
+        }
+
+
+    </style>
+
+    <!--[if IE]>
+    <script type="text/javascript">
+        var console = { log: function() {} };
+    </script>
+    <![endif]-->
+
+
+
+    <script src="vendors/js/jquery.js"></script>
+    <script src="vendors/js/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="vendors/js/scrolloverflow.js"></script>
+
+    <script type="text/javascript" src="vendors/js/fullpage.js"></script>
+    <script type="text/javascript" src="vendors/js/examples.js"></script>
+
+    <script type="text/javascript">
+
+        function start() {
+
+            myFunction();
+
+        }
+
+        $(window).on("load", start)
+
+        var myVar;
+
+        function myFunction() {
+            showPage()
+        }
+
+        function showPage() {
+            $('#fullpage').fullpage({
+                verticalCentered: true,
+                sectionsColor: ['#b1edfb', '#b1edfb', '#b1edfb', '#b1edfb', '#b1edfb', '#b1edfb', '#000'],
+                afterRender: function(){
+                    //playing the video
+                    $('video').get(0).play();
+                }
+            });
+
+            $('#polar-title').delay(1000).animate({ opacity: 1 }, 700)
+            $("#name-title").delay(1500).animate({ opacity: 1 }, 2800)
+
+            $("#polar-bear-facts").click(function(){
+                $('#polar-slide').slideToggle('slow');
+            });
+
+            $("#climate-facts").click(function(){
+                $('#climate-slide').slideToggle('slow');
+            });
+
+            $("#ecology-facts").click(function(){
+                $('#ecology-slide').slideToggle('slow');
+            });
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("myDiv").style.display = "block";
+        }
+
+    </script>
+
+</head>
+<body style="margin:0;">
+
+<div id="loader"></div>
+
+<audio controls autoplay style="display: none;">
+    <source src="audio/soundtrack.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+
+<div id="fullpage">
+    <div class="section" id="section0">
+        <video autoplay loop muted id="myVideo">
+            <source src="video/video.mp4" type="video/mp4">
+        </video>
+        <div class="layer">
+            <h1 class="title-style" id="polar-title">Polar Bears on Melting Ice</h1>
+            <h2 class="title-style" id="name-title">By<br> Pernille C.F. Bügel</h2>
+        </div>
+        <div class="creative-commons-container" style="width: auto; text-align: left;">
+            Video: National Geographic Documentary - Polar Bears Lifes - Wildlife Animals by <a href="https://www.youtube.com/channel/UCy3CfPu7RJUoaTxelF9Sjyg">natGeoHD channel</a><br>
+            Audio: Stelle Stårmfloij(Quiet Storm Surge) by  <a href="https://soundcloud.com/soimanislander">So I'm An Islander</a> is licensed under a Attribution-ShareAlike 3.0 Unported license.
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <div class="flex-container">
+
+            <span class="story-item story-item-one"><span style="font-size: 36px; font-weight: bold">S</span>pring has arrived in the Arctic;
+                the cubs born in November are out of the maternity den for the first time, and the hunt for seals has already begun.
+                The sea ice from winter has started to melt, and ice flakes float around the cold vast landscape.
+                The hunt intensifies as the ice melts in a fast pace and the ringed seals are a long swim away.
+                The mother bear must act fast, she cannot go too far from the defenceless cubs,
+                but she must find food before summer when ice will be sparse.
+            </span>
+        </div>
+        <div class="creative-commons-container">
+            Arctic Ice.JPG, Pink floyd88, <a href="https://commons.wikimedia.org/wiki/Category:CC-BY-SA-3.0,2.5,2.0,1.0">CC-BY-SA-3.0,2.5,2.0,1.0</a>
+        </div>
+    </div>
+
+    <div class="section" id="section2">
+
+        <div class="flex-container">
+                <span class="story-item story-item-two"><span style="font-size: 36px; font-weight: bold">I</span>
+                    t did not used to be like this. They could froth on seals and raise healthy cubs,
+                    growing in population and being a vital part to the ecosystem, but that was before.
+                    As our planet is going through changes, some will be more vulnerable and become a victim to the changing of their habitat.
+                    Polar bears are in a fragile position, everything they have known and survived on is in a fast transition, and they have to adapt fast.
+                </span>
+        </div>
+
+        <div class="quick-facts-container">
+
+            <div id="polar-bear-facts" class="quick-facts-title">
+                Polar Bear Facts <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+
+            <div id="polar-slide" class="quick-facts">
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Number of polar bears
+                    </span>
+                    <span class="fact-text">
+                        22,000 - 31,000
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Where they live
+                    </span>
+                    <span class="fact-text">
+                        Northern Hemisphere, Norway, Canada, Russia, Greenland and the United States
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Sub-populations
+                    </span>
+                    <span class="fact-text">
+                        19
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Prey
+                    </span>
+                    <span class="fact-text">
+                         Ringed seals, bearded seals, whale carcasses, beluga whale and walrus
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Average number of cubs
+                    </span>
+                    <span class="fact-text">
+                         2
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Average lifespan
+                    </span>
+                    <span class="fact-text">
+                         15 - 18 years
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="creative-commons-container">
+            Polar Bear Haiku, <a href="https://www.flickr.com/photos/cmichel67/">Christopher Michel</a>, (CC BY 2.0)
+        </div>
+
+    </div>
+
+    <div class="section" id="section3">
+        <div class="flex-container">
+            <span class="story-item story-item-three"><span style="font-size: 36px; font-weight: bold">C</span>hanges
+                to the sea ice makes the polar bear use all of its skills in swimming to find food.
+                The sea ice melts every summer, but less and less comes back for winter. Strong as they are,
+                the bears have never had to venture for this long before, up to days at a time even.
+                That is the new reality of survival now, even having to risk the cubs' chances when doing so.
+                These permanent changes will make them migrate to wherever there still is ice,
+                which leaves them wandering in new territories and their proximity to humans grow ever closer.
+            </span>
+        </div>
+        <div class="creative-commons-container">
+            PolarBear, <a href="https://pixabay.com/no/isbj%C3%B8rn-bj%C3%B8rn-walking-ser-sn%C3%B8-529638/">skeeze</a>, CC0 1.0 Universal (CC0 1.0)
+        </div>
+    </div>
+    <div class="section" id="section4">
+        <div class="flex-container">
+            <span class="story-item story-item-four"><span style="font-size: 36px; font-weight: bold">T</span>he changes to the sea ice is fast, the ice is younger, thinner and moving more than it has ever done before.
+                The ice helps maintain the cold climate that so many species thrive in, but now their habitat is disappearing
+                and the ecosystem of the Arctic is going to endure fatal consequences. Never before has there been such high
+                temperatures, never before has the polar bear had to change its ways, never before have things looked so hopeless.
+            </span>
+        </div>
+
+        <div class="quick-facts-container">
+
+            <div id="climate-facts" class="quick-facts-title">
+                Climate Change Facts <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+
+            <div id="climate-slide" class="quick-facts">
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Sea ice melted
+                    </span>
+                    <span class="fact-text">
+                        13.4% every decade since 1979
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Expected rise in sea level
+                    </span>
+                    <span class="fact-text">
+                        1 meter by 2100
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                       Expected loss of polar bear habitat
+                    </span>
+                    <span class="fact-text">
+                        2/3 in 2050
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Rise in temperature over
+                    </span>
+                    <span class="fact-text">
+                          5°C in the next 100 years
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Direct reasons for polar bear extinction
+                    </span>
+                    <span class="fact-text">
+                          Malnutrition and starvation from loss of sea ice
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Sea Ice disappearing completely
+                    </span>
+                    <span class="fact-text">
+                        Predicted to be 2080
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="creative-commons-container">
+            Polar bear, <a href="https://pixabay.com/no/isbj%C3%B8rn-bj%C3%B8rn-arctic-landskap-529659/">skeeze</a>, CC0 1.0 Universal (CC0 1.0)
+        </div>
+
+    </div>
+    <div class="section" id="section5">
+        <div class="flex-container">
+            <span class="story-item story-item-five"><span style="font-size: 36px; font-weight: bold">T</span>he polar bears risk
+                becoming endangered because the warming continues without stopping.
+                Humans are not doing anything drastic to change what is happening, although everything living must
+                suffer the bad decisions of greedy and destructive behaviours of humans.
+                Will change come too late? Will the polar bear make the fight? Or will the zoo be the only place for them in the future?
+                Locked up in a cage away from freedom and blue, clean and diverse seas.
+            </span>
+        </div>
+
+        <div id="polar-eco" class="quick-facts-container-eco">
+
+            <div id="ecology-facts" class="quick-facts-title">
+                Ecosystem Facts <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </div>
+
+            <div id="ecology-slide" class="quick-facts">
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Balance
+                    </span>
+                    <span class="fact-text">
+                        If the ecosystem is out of balance, it is a sign that one or more species are unhealthy.
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                      Apex predator
+                    </span>
+                    <span class="fact-text">
+                        The polar bear is an apex predator,
+                        a role that is important for species control in their surroundings as it helps maintain a balance.
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Species Reliance
+                    </span>
+                    <span class="fact-text">
+                        If they are unable to hunt their main food source, the seal, other species will be threatened, as they will be the polar bears next target.
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        The Food Chain
+                    </span>
+                    <span class="fact-text">
+                        The leftovers from the hunted seal is important food for the Arctic Fox and other species like birds etc.
+                    </span>
+                </div>
+
+                <div class="fact-container">
+                    <span class="fact-header">
+                        Herbivores
+                    </span>
+                    <span class="fact-text">
+                        If the polar bear is not there, it and others who depend on their catch will become herbivores, which will diminish food sources for natural herbivores.
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <div class="creative-commons-container">
+            Polar Bear, <a href="https://pixabay.com/no/polar-bear-bj%C3%B8rn-vann-484515/">echoyan</a>, CC0 1.0 Universal (CC0 1.0)
+        </div>
+    </div>
+    <div class="section" id="section6">
+        <div class="flex-container">
+            <span class="story-item story-item-six"><span style="font-size: 36px; font-weight: bold">T</span>he mother of the cubs has successfully hunted a meal. It will last them for a while,
+                but the struggle is not over. She returns to her cubs, and life continues as it has,
+                with the ever-growing concern for their food security and growth.
+                Change is already happening and the road back to normal is far reaching, if even ever happening again.
+                The new normal brings them closer to different habitats, where humans also live,
+                and new threats bring more uncertainty and fear. One thing is certain however,
+                the future is unclear and man-made destruction will continue to affect these magnificent animals.
+                How the ecosystem will function without them remains to be seen,
+                but it will have a massive effect on ocean life in the Arctic.
+            </span>
+        </div>
+
+        <div class="creative-commons-container">
+            Polar bear with young Arctic NWR, <a href="https://www.flickr.com/photos/usfwshq/5124077764">U.S. Fish and Wildlife Service Headquarters</a>, (CC BY 2.0)
+        </div>
+    </div>
+
+    <div class="section" id="section7">
+
+        <div class="flex-container">
+        <h2 style="color: white;">For more information on this important issue, check out these links:</h2>
+
+        <a href="http://www.worldwildlife.org/pages/polar-bears-and-climate-change">World Wild Life: Polar Bears & Climate Change</a><br>
+        <a href="http://www.polarbearsinternational.org/about-polar-bears/climate-change">Polar Bears International: Climate Change</a><br>
+        <a href="http://icb.oxfordjournals.org/content/44/2/163.short">Polar Bears in a Warming Climate</a><br>
+        <a href="https://www.theguardian.com/environment/2016/sep/14/polar-bears-losing-crucial-sea-ice-study-arctic">Guardian: Polar Bears Losing Crucial Sea Ice</a><br>
+        <a href="http://news.nationalgeographic.com/2015/09/150904-polar-bears-dolphins-seals-climate-change/">National Geography: 4 Ways Polar Bears Are Dealing With Climate Change</a><br>
+
+
+        </div>
+
+
+    </div>
+</div>
+</div>
+
+</body>
+</html>
