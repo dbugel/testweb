@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<body style="background-color:powderblue;">
+<style>
+        /* Style for our header texts
+        * --------------------------------------- */
+        h1{
+            font-size: 5em;
+            color: #fff;
+            margin:0;
+            padding:0;
+        }
+
+        /* Centered texts in each section
+        * --------------------------------------- */
+        .section{
+            text-align:center;
+            overflow: hidden;
+        }
+
+        #myVideo{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            top:0;
+            right:0;
+            width: 100%;
+            height: 100%;
+            background-size: 100% 100%;
+            background-color: black; /* in case the video doesn't fit the whole page*/
+            background-image: /* our video */;
+            background-position: center center;
+            background-size: contain;
+            object-fit: cover; /*cover video background */
+            z-index:3;
+        }
+
+
+
+        /* Layer with position absolute in order to have it over the video
+        * --------------------------------------- */
+        #section0 .layer{
+            position: absolute;
+            z-index: 4;
+            width: 100%;
+            left: 0;
+            top: 48px;
+        }
+
+        /*solves problem with overflowing video in Mac with Chrome */
+        #section0{
+        }
+
+        #section1 {
+
+            background-image: url(imgs/photo_one.JPG);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section2 {
+
+            background-image: url(imgs/photo_two.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section3 {
+
+            background-image: url(imgs/photo_three.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section4 {
+
+            background-image: url(imgs/photo_four.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section5 {
+
+            background-image: url(imgs/photo_five.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section6 {
+
+            background-image: url(imgs/photo_six.jpg);
+            background-position: center center;
+            background-size: cover;
+
+        }
+
+        #section7 {
+            background: black;
+        }
+
+        .title-container {
+            position: absolute;
+            width: 100%;
+            height: 360px;
+            display: block;
+            /*background-color: white;*/
+            margin: 0 auto;
+            opacity: 0.5;
+            top: 33%;
+            /* left: 25%; */
+            text-align: center;
+        }
+
+        .sidebar-container {
+            position: absolute;
+            width: 300px;
+            min-height: 100%;
+            display: block;
+            background-color: white;
+            opacity: 0.5;
+            top: 0;
+            left: 60px;
+            /* left: 25%; */
+            text-align: center;
+            padding: 16px;
+        }
+
+        .vignette {
+            position: relative;
+            display: block;
+        }
+        .vignette img {
+            display: block;
+        }
+        .vignette:after {
+            -moz-box-shadow: inset 0 0 10em #666;
+            -webkit-box-shadow: inset 0 0 10em #666;
+            box-shadow: inset 0 0 10em #666;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            content: "";
+        }
+
+
+    </style>
+
+<h1 style="text-align:center;">Centered Heading</h1>
+<p style="text-align:center;">Centered paragraph.</p>
+
+<img src="w3schools.jpg" alt="W3Schools.com" width="104" height="142">
+
+<p>The image is a link. You can click on it.</p>
+
+<a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0">
+</a>
+
+<h2>Surfing</h2>
+<img src="surf.jpg" alt="surf" align="middle" style="width:1500px;height:1000px;">
+
+
+<div id="loader"></div>
+
+<audio controls autoplay style="display: none;">
+    <source src="audio/soundtrack.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<div style="display:none;" id="myDiv" class="animate-bottom">
+
+<div id="fullpage">
+    <div class="section" id="section0">
+        <video autoplay loop muted id="myVideo">
+            <source src="video/video.mp4" type="video/mp4">
+        </video>
+        <div class="layer">
+            <h1 class="title-style" id="polar-title">Polar Bears on Melting Ice</h1>
+            <h2 class="title-style" id="name-title">By<br> Pernille C.F. Bügel</h2>
+        </div>
+        <div class="creative-commons-container" style="width: auto; text-align: left;">
+            Video: National Geographic Documentary - Polar Bears Lifes - Wildlife Animals by <a href="https://www.youtube.com/channel/UCy3CfPu7RJUoaTxelF9Sjyg">natGeoHD channel</a><br>
+            Audio: Stelle Stårmfloij(Quiet Storm Surge) by  <a href="https://soundcloud.com/soimanislander">So I'm An Islander</a> is licensed under a Attribution-ShareAlike 3.0 Unported license.
+        </div>
+    </div>
+    <div class="section" id="section1">
+        <div class="flex-container">
+
+            <span class="story-item story-item-one"><span style="font-size: 36px; font-weight: bold">S</span>pring has arrived in the Arctic;
+                the cubs born in November are out of the maternity den for the first time, and the hunt for seals has already begun.
+                The sea ice from winter has started to melt, and ice flakes float around the cold vast landscape.
+                The hunt intensifies as the ice melts in a fast pace and the ringed seals are a long swim away.
+                The mother bear must act fast, she cannot go too far from the defenceless cubs,
+                but she must find food before summer when ice will be sparse.
+            </span>
+        </div>
+        <div class="creative-commons-container">
+            Arctic Ice.JPG, Pink floyd88, <a href="https://commons.wikimedia.org/wiki/Category:CC-BY-SA-3.0,2.5,2.0,1.0">CC-BY-SA-3.0,2.5,2.0,1.0</a>
+        </div>
+    </div>
+
+    <div class="section" id="section2">
+
+        <div class="flex-container">
+                <span class="story-item story-item-two"><span style="font-size: 36px; font-weight: bold">I</span>
+                    t did not used to be like this. They could froth on seals and raise healthy cubs,
+                    growing in population and being a vital part to the ecosystem, but that was before.
+                    As our planet is going through changes, some will be more vulnerable and become a victim to the changing of their habitat.
+                    Polar bears are in a fragile position, everything they have known and survived on is in a fast transition, and they have to adapt fast.
+                </span>
+        </div>
+
+
+</body>
+</html>
